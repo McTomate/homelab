@@ -19,7 +19,7 @@ OPNsense übernimmt Inter-VLAN-Routing, Stateful Filtering, NAT, DHCP, DNS für 
 | – | APMGMT | `10.10.11.0/24` | Management des Access Points |
 | – | WireGuard | `10.10.90.0/24` | VPN-Tunnelnetz (kein VLAN) |
 
-Gateway ist jeweils die `.1` auf OPNsense. Der Access Point stellt je ein WLAN für VLAN 40, 50 und 60 bereit.
+Gateway ist jeweils die `.1` auf OPNsense. Der Access Point hängt direkt an der OPNsense und stellt je ein WLAN für VLAN 40, 50 und 60 bereit. Über den Switch laufen deshalb nur VLAN 10, 20 und 70.
 
 [![VLAN-Konfiguration des Managed Switches](bilder/sw_vlan.png)](bilder/sw_vlan.png)
 

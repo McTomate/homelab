@@ -21,8 +21,8 @@ flowchart TB
     vpn([WireGuard-Clients<br>10.10.90.0/24]) -. VPN .-> fw
     fw ===|Trunk| sw[Managed Switch sw01]
     sw ---|VLAN 10| desk[Admin-Desktop]
+    fw ===|VLAN 40/50/60| ap
     sw ===|Trunk| pve
-    sw ===|Trunk| ap
 
     subgraph pve[Proxmox-Host]
         subgraph v20[VLAN 20 · SERVER]

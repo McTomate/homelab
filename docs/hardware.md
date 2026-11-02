@@ -5,7 +5,7 @@
 
 | Gerät | Daten | Aufgabe |
 |---|---|---|
-| N150 Mini-PC | Intel N150, 8 GB RAM, 2 × RJ45 | OPNsense-Firewall |
+| N150 Mini-PC | Intel N150, 8 GB RAM, 4 × RJ45 | OPNsense-Firewall |
 | Lenovo ThinkCentre | Intel Core i5-6500 (4C/4T), 32 GB RAM | Proxmox-Host |
 | UGREEN CM933 | Managed Switch, 5 Ports | VLAN-Switching |
 | TP-Link TL-7AP5100HC-PoE/DC | Access Point | WLAN für Clients, IoT und Gäste |
