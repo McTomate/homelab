@@ -1,0 +1,27 @@
+# Name, der oben links auf der Seite steht
+site_name: Mein Homelab
+
+theme:
+  name: material
+  language: de
+  # Umschalter zwischen hellem und dunklem Design
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Dunkles Design
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Helles Design
+  features:
+    - content.code.copy   # Kopier-Button an Codeblöcken
+    - search.highlight    # Suchbegriffe auf der Seite markieren
+
+# Zusätzliche Markdown-Funktionen (Hinweisboxen, Code-Hervorhebung)
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - tables

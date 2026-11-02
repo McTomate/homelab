@@ -1,0 +1,31 @@
+# Baut die Doku bei jedem Push auf "main" und veröffentlicht sie auf GitHub Pages
+name: Doku veröffentlichen
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch: # erlaubt manuellen Start im Tab "Actions"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.13"
+      - run: pip install -r requirements.txt
+      - run: mkdocs build --strict # --strict: kaputte Links brechen den Build ab
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v5

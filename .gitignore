@@ -1,0 +1,4 @@
+# Fertig gebaute Website, entsteht bei "mkdocs build" automatisch neu
+site/
+# Einstellungen der Claude-App, gehören nicht in die Doku
+.claude/
