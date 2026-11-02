@@ -25,3 +25,5 @@ VMs und Container bekommen ihr VLAN direkt am virtuellen Netzwerkadapter. Die 4 
 ## Monitoring
 
 Uptime Kuma überwacht die Erreichbarkeit wichtiger Komponenten und Dienste. Statusänderungen gehen über Home Assistant als Push-Benachrichtigung aufs Smartphone. Meldungen bei Ausfall und Wiederherstellung sind getestet.
+
+[![Uptime-Kuma-Dashboard mit 20 überwachten Diensten](bilder/kuma.png)](bilder/kuma.png)

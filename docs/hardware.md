@@ -1,5 +1,8 @@
 # Hardware
 
+![Homelab von vorne: Monitor, Access Point, Firewall und Proxmox-Host im Regal](bilder/hl_front.jpeg){ width="49%" }
+![Homelab von hinten: Verkabelung von Firewall und Switch](bilder/hl_back.jpeg){ width="49%" }
+
 | Gerät | Daten | Aufgabe |
 |---|---|---|
 | N150 Mini-PC | Intel N150, 8 GB RAM, 2 × RJ45 | OPNsense-Firewall |

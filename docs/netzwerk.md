@@ -21,6 +21,8 @@ OPNsense übernimmt Inter-VLAN-Routing, Stateful Filtering, NAT, DHCP, DNS für 
 
 Gateway ist jeweils die `.1` auf OPNsense. Der Access Point stellt je ein WLAN für VLAN 40, 50 und 60 bereit.
 
+[![VLAN-Konfiguration des Managed Switches](bilder/sw_vlan.png)](bilder/sw_vlan.png)
+
 ## Firewall-Prinzip
 
 Freigegeben wird nur, was funktional nötig ist. In restriktiven Netzen gilt diese Regelreihenfolge:
@@ -35,6 +37,10 @@ Freigegeben wird nur, was funktional nötig ist. In restriktiven Netzen gilt die
 
 - Aus dem LAB-VLAN ist die Proxmox-Oberfläche nicht erreichbar (getestet).
 - Ein WLAN-Client darf den Drucker im IoT-VLAN nur über TCP 515, 631 und 9100 erreichen.
+
+Regeln des WLAN-VLANs: gezielte Freigaben oben, danach der RFC1918-Block, zuletzt das Internet.
+
+[![OPNsense-Firewallregeln des WLAN-VLANs](bilder/fw_rules.png)](bilder/fw_rules.png)
 
 ## DNS und DHCP
 

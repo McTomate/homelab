@@ -36,6 +36,7 @@ nav:
 # Zusätzliche Markdown-Funktionen (Hinweisboxen, Code-Hervorhebung, Checklisten)
 markdown_extensions:
   - admonition
+  - attr_list               # Bildgröße angeben: ![...](bild.png){ width="49%" }
   - pymdownx.details
   - pymdownx.highlight
   - pymdownx.superfences:
