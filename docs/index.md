@@ -1,57 +1,36 @@
-# Homelab-Dokumentation
+# Homelab
 
-**Dokumentationsstand:** 02.11.2026  
-**Plattformen:** Proxmox VE 9.1, OPNsense, AdGuard Home, Windows Server 2022, Home Assistant
+Virtualisierte, segmentierte Testumgebung nach dem Vorbild einer kleinen bis mittelständischen Unternehmens-IT. Sie dient dazu, Netzwerk- und Firewall-Konzepte, Linux- und Windows-Server sowie Automatisierung praktisch umzusetzen. Wo möglich, kommen kostenlose Lösungen und Community-Editionen zum Einsatz.
 
-!!! abstract "Gesamtstatus zum 02.11.2026"
-    Netzwerk- und Virtualisierungsbasis funktionsfähig; Smart-Home-Teilprojekt abgeschlossen; Windows-/AD-Lab im Aufbau; Automatisierung, Storage und Backup als nächste Entwicklungsbereiche vorgesehen.
+**Stand:** 02.11.2026
 
-## Ziel des Homelabs
+## Highlights
 
-Das Homelab dient dem Aufbau einer virtualisierten, segmentierten und möglichst realitätsnahen IT-Infrastruktur, die sich an den Anforderungen einer kleinen bis mittelständischen Unternehmensumgebung orientiert.
+- **6 VLANs** mit restriktivem Firewall-Konzept auf OPNsense: Management, Server, Clients, IoT, Gäste und Lab
+- **Smart Home über VLAN-Grenzen:** Matter über IPv6 und mDNS zwischen Server- und IoT-Netz
+- **WireGuard-VPN mit minimalen Rechten:** nur ausgewählte Dienste, keine Admin-Oberflächen
+- **Monitoring:** Uptime Kuma meldet Ausfälle über Home Assistant aufs Smartphone
+- **Active-Directory-Lab** mit Windows Server 2022 in einem isolierten VLAN
 
-Die Umgebung verfolgt mehrere Ziele:
-
-- Aufbau und Administration einer strukturierten Netzwerkarchitektur mit VLANs.
-- Umsetzung eines restriktiven Firewall- und Berechtigungskonzepts.
-- Bereitstellung zentraler Serverdienste unter Linux und Windows.
-- Einrichtung einer Active-Directory-Testumgebung.
-- Erlernen von Virtualisierung, Automatisierung und Infrastructure as Code.
-- Aufbau einer sicheren Remote-Access-Infrastruktur.
-- Überwachung der Infrastruktur durch zentrale Monitoring-Dienste.
-- Integration von Smart-Home-Geräten unter Berücksichtigung der Netzwerksicherheit.
-- Umsetzung einer geeigneten Backup- und Wiederherstellungsstrategie.
-
-Bei der Softwareauswahl werden möglichst kostenlose Lösungen beziehungsweise Community-Editionen bevorzugt.
-
-## Eingesetzte Technologien
+## Technologien
 
 | Bereich | Technologie |
 |---|---|
-| Virtualisierung | Proxmox VE |
-| Firewall und Routing | OPNsense |
-| Switching | UGREEN Managed Switch |
-| WLAN | TP-Link Access Point |
-| DNS-Filterung | AdGuard Home |
-| DHCP und Infrastruktur-DNS | OPNsense / dnsmasq |
-| Windows-Domäne | Active Directory Domain Services |
-| Windows-DNS | Windows Server DNS |
-| Netzwerküberwachung | Uptime Kuma |
-| Smart Home | Home Assistant |
-| IoT-Protokolle | Matter, IPv6, mDNS |
-| VPN | WireGuard |
+| Virtualisierung | Proxmox VE 9.1 |
+| Firewall, Routing, DHCP, VPN | OPNsense mit dnsmasq und WireGuard |
+| Netzwerk | UGREEN Managed Switch, TP-Link Access Point |
+| DNS | AdGuard Home, Windows Server DNS |
+| Windows | Windows Server 2022, Active Directory |
+| Monitoring | Uptime Kuma |
+| Smart Home | Home Assistant, Matter |
 | Passwortverwaltung | Vaultwarden |
-| Automatisierung | Ansible |
-| Storage und Backup | In Planung beziehungsweise Erweiterung |
+| Automatisierung | Ansible (im Aufbau) |
 
-## Zusammenfassung des Projektstands
+## Status
 
-Das Homelab hat sich seit dem 12.10.2026 deutlich weiterentwickelt.
-
-Die grundlegende Infrastruktur für Routing, VLAN-Segmentierung, Virtualisierung, DNS, WLAN und sicheren externen Zugriff ist vorhanden.
-
-Mit Home Assistant wurde außerdem eine VLAN-übergreifende IoT-Infrastruktur einschließlich IPv6, Matter, mDNS, zentraler Steuerung und Monitoring-Integration erfolgreich umgesetzt.
-
-Das Windows-Lab stellt den nächsten Schwerpunkt dar. Mit VLAN 70 und dem ersten Windows Server 2022 wurde die technische Grundlage geschaffen. Der weitere Ausbau konzentriert sich auf Active Directory, DNS, Clientverwaltung, Gruppenrichtlinien und Automatisierung.
-
-Langfristig soll aus dem Homelab eine vollständige, dokumentierte und reproduzierbare Testumgebung entstehen, mit der sich typische Aufgaben der Systemadministration, Netzwerkadministration und IT-Sicherheit praktisch durchführen lassen.
+| Bereich | Stand |
+|---|---|
+| Netzwerk und Virtualisierung | ✅ funktionsfähig |
+| Smart Home | ✅ abgeschlossen am 01.11.2026 |
+| Windows-AD-Lab | 🔧 im Aufbau |
+| Ansible, Storage, Backup | 📋 geplant |
