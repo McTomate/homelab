@@ -12,6 +12,37 @@ Virtualisierte, segmentierte Testumgebung nach dem Vorbild einer kleinen bis mit
 - **Monitoring:** Uptime Kuma meldet Ausfälle über Home Assistant aufs Smartphone
 - **Active-Directory-Lab** mit Windows Server 2022 in einem isolierten VLAN
 
+## Netzwerkplan
+
+```mermaid
+flowchart TB
+    internet((Internet)) --- speedport[Speedport]
+    speedport --- fw[OPNsense fw01<br>Routing · Firewall · DHCP]
+    vpn([WireGuard-Clients<br>10.10.90.0/24]) -. VPN .-> fw
+    fw ===|Trunk| sw[Managed Switch sw01]
+    sw ---|VLAN 10| desk[Admin-Desktop]
+    sw ===|Trunk| pve
+    sw ===|Trunk| ap
+
+    subgraph pve[Proxmox-Host]
+        subgraph v20[VLAN 20 · SERVER]
+            svc[AdGuard Home<br>Uptime Kuma<br>Vaultwarden<br>OpenSpeedTest]
+            ha[Home Assistant]
+        end
+        subgraph v70[VLAN 70 · LAB]
+            dc[LAB-DC01]
+        end
+    end
+
+    subgraph ap[Access Point]
+        w40[VLAN 40 · Clients]
+        w50[VLAN 50 · IoT<br>TV, Lampen]
+        w60[VLAN 60 · Gäste]
+    end
+
+    ha -. Matter / IPv6 .- w50
+```
+
 ## Technologien
 
 | Bereich | Technologie |

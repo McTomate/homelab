@@ -2,12 +2,7 @@
 
 ## Aufbau
 
-```text
-Internet → Speedport → OPNsense (fw01) → Managed Switch (sw01)
-                                          ├─ Proxmox-Host    (Trunk)
-                                          ├─ Access Point    (WLAN-VLANs)
-                                          └─ Admin-Desktop   (VLAN 10)
-```
+Den Gesamtaufbau zeigt der [Netzwerkplan](index.md#netzwerkplan) auf der Übersicht.
 
 OPNsense übernimmt Inter-VLAN-Routing, Stateful Filtering, NAT, DHCP, DNS für lokale Namen und das VPN. Weil das WAN hinter dem Speedport liegt, entsteht für IPv4 ein doppeltes NAT.
 
