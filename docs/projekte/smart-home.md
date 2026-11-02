@@ -12,7 +12,7 @@ Home Assistant läuft im SERVER-VLAN 20, die Smart-Home-Geräte und der TV im Io
 
 | Problem | Lösung |
 |---|---|
-| mDNS für die Geräteerkennung (Matter, AirPlay) wird nicht über VLAN-Grenzen geroutet | Netflector leitet die Discovery-Pakete zwischen den VLANs weiter |
+| mDNS für die Geräteerkennung (Matter, AirPlay) wird nicht über VLAN-Grenzen geroutet | Netflector (noch unveröffentlichtes OPNsense-Plugin) leitet die Discovery-Pakete zwischen den VLANs weiter |
 | Matter benötigt IPv6 | Router Advertisements auf OPNsense für VLAN 20 und 50, ULA-Präfixe mit VLAN-ID im Subnetz (`fdxx:…:20::/64`, `fdxx:…:50::/64`) |
 | Die Matter-Regel galt nur für ein einzelnes Gerät | Regel auf das gesamte IoT-IPv6-Präfix erweitert (UDP 5540 von Home Assistant) |
 | AirPlay zum TV von VLAN 40 nach VLAN 50 | Zur Fehlersuche kurzzeitig alle Ports freigegeben, danach die breite Regel deaktiviert. AirPlay läuft mit den gezielten Regeln weiter |
