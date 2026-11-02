@@ -1,5 +1,6 @@
 # Name, der oben links auf der Seite steht
-site_name: Mein Homelab
+site_name: Homelab-Dokumentation
+site_url: https://mctomate.github.io/homelab/
 
 theme:
   name: material
@@ -15,13 +16,43 @@ theme:
         icon: material/brightness-4
         name: Helles Design
   features:
-    - content.code.copy   # Kopier-Button an Codeblöcken
-    - search.highlight    # Suchbegriffe auf der Seite markieren
+    - content.code.copy     # Kopier-Button an Codeblöcken
+    - search.highlight      # Suchbegriffe auf der Seite markieren
+    - navigation.sections   # Menü-Abschnitte als Gruppen anzeigen
+    - navigation.top        # "Nach oben"-Button bei langen Seiten
 
-# Zusätzliche Markdown-Funktionen (Hinweisboxen, Code-Hervorhebung)
+# Menü: neue Seiten hier eintragen, sonst erscheinen sie nicht in der Navigation
+nav:
+  - Übersicht: index.md
+  - Änderungen: changelog.md
+  - Hardware: hardware.md
+  - Netzwerk:
+      - Physische Architektur: netzwerk/architektur.md
+      - VLANs und IP-Adressen: netzwerk/vlans.md
+      - DNS und DHCP: netzwerk/dns-dhcp.md
+      - Firewall und Sicherheit: netzwerk/firewall.md
+      - WLAN: netzwerk/wlan.md
+      - IPv6, Multicast und Matter: netzwerk/ipv6-matter.md
+      - WireGuard: netzwerk/wireguard.md
+  - Dienste:
+      - Proxmox VE: dienste/proxmox.md
+      - Home Assistant: dienste/home-assistant.md
+      - Uptime Kuma: dienste/uptime-kuma.md
+      - Jellyfin (geplant): dienste/jellyfin.md
+  - Lab:
+      - Windows Server und AD: lab/windows-ad.md
+      - Ansible: lab/ansible.md
+  - Betrieb:
+      - Storage und Backup: betrieb/storage-backup.md
+      - Standards: betrieb/standards.md
+  - Planung: planung.md
+
+# Zusätzliche Markdown-Funktionen (Hinweisboxen, Code-Hervorhebung, Checklisten)
 markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.highlight
   - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - tables

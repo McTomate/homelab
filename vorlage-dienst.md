@@ -1,6 +1,10 @@
 # Vorlage: Dienst
 
-Kopiere diese Datei für jeden neuen Dienst (z. B. `pihole.md`, `jellyfin.md`).
+Kopiere diese Datei für jeden neuen Dienst nach `docs/dienste/` (z. B. `pihole.md`)
+und trage sie in `mkdocs.yml` unter `nav` → `Dienste` ein.
+
+> **Die Doku ist öffentlich.** Nie hinein: Passwörter, API-Keys, WireGuard-Schlüssel,
+> öffentliche IP, DynDNS-Adressen, nach außen offene Ports.
 
 ## Was macht der Dienst?
 
