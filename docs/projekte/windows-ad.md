@@ -23,7 +23,7 @@ Alle VMs laufen mit VirtIO-Treibern, QEMU Guest Agent und aktuellem Patchstand.
 
 ## Benutzer, Gruppen und Freigaben
 
-OUs: `Clients`, `Servers`, `Users`, `Groups`, `ServiceAccounts`. Testbenutzer gibt es für IT, Personal und Vertrieb. Berechtigungen werden nach **AGDLP** vergeben:
+OUs: `Clients`, `Servers`, `DomUsers`, `Groups`, `ServiceAccounts`. Testbenutzer gibt es für IT, Personal und Vertrieb. Berechtigungen werden nach **AGDLP** vergeben:
 
 ```text
 Benutzer → GG_<Abteilung> (global) → DL_FS_<Abteilung>_M (domänenlokal) → Freigabe
@@ -45,8 +45,12 @@ Benutzer → GG_<Abteilung> (global) → DL_FS_<Abteilung>_M (domänenlokal) →
 |---|---|
 | GPO-USER-DriveMaps | Netzlaufwerke je nach Gruppe (Item-Level Targeting), Entfernen nach Gruppenwechsel |
 | GPO-COMPUTER-WindowsLAPS | Lokales Administratorkennwort über Windows LAPS |
-| GPO-COMPUTER-AutoLock-10min | Bildschirmsperre nach 10 Minuten |
-| GPO-USER-Taskbar-PowerShell | PowerShell an die Taskleiste anheften |
+| GPO-COMPUTER-Autolock-10min | Bildschirmsperre nach 10 Minuten |
+| GPO-USER-TASKBAR-PowerShell | PowerShell an die Taskleiste anheften |
+
+Computer-GPOs sind mit der OU `Clients` verknüpft, Benutzer-GPOs mit `DomUsers`.
+
+[![Gruppenrichtlinienverwaltung mit OU-Struktur und GPO-Verknüpfungen, davor die AGDLP-Gruppen in Active Directory](../bilder/ad-lab.png)](../bilder/ad-lab.png)
 
 ## Windows LAPS
 
