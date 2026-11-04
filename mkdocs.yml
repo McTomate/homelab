@@ -1,6 +1,6 @@
 # Name, der oben links auf der Seite steht
 site_name: Homelab-Dokumentation
-site_url: https://mctomate.github.io/homelab/
+site_url: https://homelab.dominik-nguyen.de/
 
 theme:
   name: material
