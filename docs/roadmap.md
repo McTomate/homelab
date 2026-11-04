@@ -8,9 +8,9 @@ Der Umzug läuft über Backup und Restore und dient damit gleichzeitig als Nachw
 - [ ] Auf der neuen Hardware wiederherstellen und Funktion prüfen
 - [ ] Ablauf, Dauer und Probleme dokumentieren
 
-## 2. Windows-AD-Lab abschließen
+## 2. Windows-AD-Lab erweitern
 
-Siehe [Nächste Schritte im Windows-AD-Lab](projekte/windows-ad.md#nachste-schritte).
+Die Grundkonfiguration ist abgeschlossen. Siehe [Nächste Schritte im Windows-AD-Lab](projekte/windows-ad.md#nachste-schritte).
 
 ## 3. Ansible-Automatisierung
 

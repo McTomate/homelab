@@ -2,7 +2,7 @@
 
 Virtualisierte, segmentierte Testumgebung nach dem Vorbild einer kleinen bis mittelständischen Unternehmens-IT. Sie dient dazu, Netzwerk- und Firewall-Konzepte, Linux- und Windows-Server sowie Automatisierung praktisch umzusetzen. Wo möglich, kommen kostenlose Lösungen und Community-Editionen zum Einsatz.
 
-**Stand:** 02.11.2026
+**Stand:** 04.11.2026
 
 ## Highlights
 
@@ -10,7 +10,7 @@ Virtualisierte, segmentierte Testumgebung nach dem Vorbild einer kleinen bis mit
 - **Smart Home über VLAN-Grenzen:** Matter über IPv6 und mDNS zwischen Server- und IoT-Netz
 - **WireGuard-VPN mit minimalen Rechten:** nur ausgewählte Dienste, keine Admin-Oberflächen
 - **Monitoring:** Uptime Kuma meldet Ausfälle über Home Assistant aufs Smartphone
-- **Active-Directory-Lab** mit Windows Server 2022 in einem isolierten VLAN
+- **Active-Directory-Lab:** Domäne mit Dateiserver, AGDLP-Berechtigungen, Gruppenrichtlinien und Windows LAPS in einem isolierten VLAN
 
 ## Netzwerkplan
 
@@ -30,7 +30,7 @@ flowchart TB
             ha[Home Assistant]
         end
         subgraph v70[VLAN 70 · LAB]
-            dc[LAB-DC01]
+            lab[LAB-DC01<br>LAB-SRV01<br>LAB-W11]
         end
     end
 
@@ -51,7 +51,7 @@ flowchart TB
 | Firewall, Routing, DHCP, VPN | OPNsense mit dnsmasq und WireGuard |
 | Netzwerk | UGREEN Managed Switch, TP-Link Access Point |
 | DNS | AdGuard Home, Windows Server DNS |
-| Windows | Windows Server 2022, Active Directory |
+| Windows | Windows Server 2022, Windows 11, Active Directory, Gruppenrichtlinien, Windows LAPS |
 | Monitoring | Uptime Kuma |
 | Smart Home | Home Assistant, Matter |
 | Passwortverwaltung | Vaultwarden |
@@ -63,5 +63,5 @@ flowchart TB
 |---|---|
 | Netzwerk und Virtualisierung | ✅ funktionsfähig |
 | Smart Home | ✅ abgeschlossen am 01.11.2026 |
-| Windows-AD-Lab | 🔧 im Aufbau |
+| Windows-AD-Lab | ✅ Grundkonfiguration abgeschlossen am 04.11.2026 |
 | Ansible, Storage, Backup | 📋 geplant |

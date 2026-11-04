@@ -20,7 +20,7 @@ VMs und Container bekommen ihr VLAN direkt am virtuellen Netzwerkadapter. Die 4 
 | OpenSpeedTest | Container | `10.10.20.50` | 20 |
 | Vaultwarden | Container | `10.10.20.70` | 20 |
 | Home Assistant | VM 200 (HAOS, 2 vCPU, 4 GiB) | `10.10.20.132` | 20 |
-| LAB-DC01 | VM 300 (Windows Server 2022, 2 vCPU, 4 GiB) | `10.10.70.10` | 70 |
+| [Windows-AD-Lab](projekte/windows-ad.md) | VMs 300–302 (DC, Dateiserver, Client) | `10.10.70.10–11` | 70 |
 
 ## Monitoring
 

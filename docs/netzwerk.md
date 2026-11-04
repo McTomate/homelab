@@ -50,4 +50,4 @@ Client → AdGuard Home (Filterung) → OPNsense/dnsmasq für lokale Namen (home
 ```
 
 - DHCP läuft über dnsmasq auf OPNsense. Server und Management-Geräte haben feste Adressen oder Reservierungen.
-- Das LAB-VLAN bekommt einen eigenen Windows-DNS auf dem Domänencontroller, siehe [Windows-AD-Lab](projekte/windows-ad.md).
+- Das LAB-VLAN hat einen eigenen Windows-DNS auf dem Domänencontroller, siehe [Windows-AD-Lab](projekte/windows-ad.md).
